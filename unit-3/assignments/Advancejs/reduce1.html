@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 29 };
+
+let arr = [ john, pete, mary ];
+function getAverageAge(arr){
+   return arr.reduce(function(acc,el){
+ return acc+Number(el.age)/arr.length
+},0)
+}
+//let getAverageAge=arr.
+alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+//console.log(getAverageAge)
+    </script>
+</body>
+</html>

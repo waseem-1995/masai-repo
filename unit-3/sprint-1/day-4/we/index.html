@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    architecture of js - inheritence
+</body>
+<script>
+    
+    
+
+    function MyArray(){
+        // to customise length property
+        Object.defineProperty(this,"length", {
+            enumerable:false
+        });
+
+        this.length=arguments.length;
+
+        for(let i=0;i<arguments.length;i++){
+            this[i]=arguments[i]
+        }
+
+    }
+    let myarr=new MyArray(4,5,6);
+    console.log(Object.values(myarr));
+
+    // MyArray is a constructor function
+   // we want to push something in array
+   // apply protoype in CF MyAarray
+
+   MyArray.prototype.push=function(value){
+    let index=this.length;
+    this[index]=value;
+    this.length++;
+    console.log(Object.values(this))
+   }
+   myarr.push(7)
+
+   MyArray.prototype.pop=function(value){
+    let index=this.length;
+    this[index]=value;
+    this.length--;
+    console.log(Object.values(this))
+   }
+   myarr.pop()
+
+
+
+</script>
+</html>

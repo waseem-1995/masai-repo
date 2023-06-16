@@ -1,0 +1,29 @@
+body>div{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(227, 233, 233);
+    box-shadow: 2px 2px 5px 5px rgb(235, 235, 235);
+}
+body>div>a{
+    text-decoration: none;
+}
+body>h1{
+ text-align: center;
+}
+
+
+table{
+    width: 65%;
+    margin: auto;
+    margin-top: 50px;    
+    font-size: 20px;
+   
+}
+table>thead{
+    height: 30px;
+    background-color: rgb(227, 233, 233);
+    box-shadow: 2px 2px 5px 5px rgb(235, 235, 235);
+}
+table>tr{
+    border: 1px solid black;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <button>Go to checkout</button>
+    <h1>Cart Page</h1>
+    <h1>Total cart Items : <span id="total-items"></span></h1>
+    <h1>Total Cost :<span id="total-cost"></span></h1>
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  //getting array of cart items from local storage from mens page
+  
+  let products = JSON.parse(localStorage.getItem("cart-items")) || [];
+  console.log(products);
+  //printing total item in h1 tag in line 24
+  document.querySelector("#total-items").innerText = products.length;
+
+  //products - array of objects
+  //total=sum of carts
+  let total = products.reduce(function (acc, el, i) {
+    return acc + Number(el.price);
+  }, 0);
+
+  console.log(total);
+  document.querySelector(
+    "#total-cost"
+  ).innerText = `₹ ${total} including taxes`;//total value
+
+  products.map(function (elem, i) {
+    //console.log(elem);
+
+    let box = document.createElement("div"); //to create div
+
+    let product_img = document.createElement("img");//create img tag
+    product_img.setAttribute("src", elem.image_url);//create src for link
+    product_img.setAttribute("id", "p_image");//giving id p_image in div for style
+
+    let title = document.createElement("p");//create p
+    title.innerText = elem.name; //giving name in p
+
+    let price_tag = document.createElement("p");//create p
+    price_tag.innerText = elem.price;//giving price in p
+
+    let btn = document.createElement("button");//create button to remove item
+    btn.innerText = "Remove"; //giving value remove
+    btn.addEventListener("click", function()
+    {
+      deleteItem(elem,i)
+    } );//to remove cart item
+
+    box.append(product_img, title, price_tag, btn);
+    document.querySelector("#container").append(box);
+  });
+
+  function deleteItem(elem,i) {
+    event.target.parentNode.remove();
+    products=products.splice(i,1);
+    localStorage.setItem("cart-items",JSON.stringify(products))
+  }
+
+  //splice("start_index","no_of_items_to_be_deleted")
+
+  
+</script>

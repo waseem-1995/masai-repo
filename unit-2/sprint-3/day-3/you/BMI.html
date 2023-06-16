@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bmi</title>
+    
+</head>
+<body>
+         <h1 id="x">your bmi</h1>
+        <h1>put your weight here</h1>
+        <input id="wt"type="number">
+        <h1>put your height here</h1>
+        <input id="ht" type="number"><br><br>
+        <button>calculate BMI</button>
+    
+    
+</body>
+</html>
+<script>
+   document.querySelector("button").addEventListener("click",mycal)
+   
+   function mycal(){
+      let weight=document.querySelector("#wt").value;
+      let height=document.querySelector("#ht").value;
+      let bmi=weight/(height*height)
+      document.querySelector("#x").innerText=bmi
+    }
+</script>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(9,1fr);
+            grid-template-rows: 60px;
+            gap: 20px;
+        }
+        #container>div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+        #primary{
+            background-color: teal;
+            color: white;
+            border-radius: 20px;
+        }
+        #secondry{
+            background-color:grey;
+            color: white;
+            border-radius: 20px;
+        }
+        #success{
+            background-color:green;
+            color: white;
+            border-radius: 20px;
+        }
+        #danger{
+            background-color:pink;
+            color: white;
+            border-radius: 20px;
+        }
+        #warning{
+            background-color: yellow;
+            color: black;
+            border-radius: 20px;
+        }
+        #info{
+            background-color: teal;
+            color: white;
+            border-radius: 20px;
+        }
+        #light{
+            background-color:white;
+            color: black;
+            border-radius: 20px;
+        }
+        #dark{
+            background-color: grey;
+            color: white;
+            border-radius: 20px;
+        }
+        #link{
+            background-color:white;
+            color:blue;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="primary">primary</div>
+        <div id="secondry">secondry</div>
+        <div id="success">success</div>
+        <div id="danger">danger</div>
+        <div id="warning">warning</div>
+        <div id="info">info</div>
+        <div id="light">light</div>
+        <div id="dark">dark</div>
+        <div id="link">link</div>
+    </div>
+</body>
+</html>

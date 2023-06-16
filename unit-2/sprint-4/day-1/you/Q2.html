@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <button>Store name to LS</button>
+    <button>Get name from LS</button>
+    <button>Store Mobile Num to LS</button>
+    <button> Mobile Num to LS</button>
+    <button>Store Hobbies to LS</button>
+    <button>Get Hobbies from LS</button>
+    <button>Store Students Data to LS</button>
+    <button>Get Students data from LS</button>
+</body>
+</html>
+<script>
+    document.querySelector("button").addEventListener("click",myls);
+    function myls(){
+        localStorage.setItem("username","masai")
+    }
+
+    document.querySelector("button+button").addEventListener("click",myget);
+    function myget(){
+        document.querySelector("h1").innerText="username";
+        localStorage.getItem("username")
+        
+    }
+
+    document.querySelector("button+button+button").addEventListener("click",mynum);
+    function mynum(){
+        localStorage.setItem("mobile",99999999)
+    }
+
+    document.querySelector("button+button+button+button").addEventListener("click",mygetnum);
+    function mygetnum(){
+       
+       let mob= localStorage.getItem("mobile")
+        document.querySelector("h1").innerText=mob;
+        
+    }
+
+    let hobbies =["cricket","music"];
+    document.querySelector("button+button+button+button+button").addEventListener("click",arrhobby);
+    function arrhobby(){
+        localStorage.setItem("my_hobbies",JSON.stringify(hobbies))
+    }
+
+    document.querySelector("button+button+button+button+button+button").addEventListener("click",arrgetls);
+    function arrgetls(){
+        let x=JSON.parse(localStorage.getItem("my_hobbies"))
+        for(let i=0;i<x.length;i++){
+            console.log(hobbies[i])
+        }
+    }
+    
+    let students =
+    [
+    {"name":"Nrupul",place:"Banglore"},
+    {"name":"Prateek",place:"Mumbai"}
+    ]
+    document.querySelector("button+button+button+button+button+button+button").addEventListener("click",std_tls);
+    function std_tls(){
+        localStorage.setItem("stdnt",JSON.stringify(students))
+    }
+
+    document.querySelector("button+button+button+button+button+button+button+button").addEventListener("click",get_tls);
+    function get_tls(){
+        let y=JSON.parse(localStorage.getItem("stdnt"))
+        for(let i=0;i<y.length;i++){
+            console.log(students[i].name)
+        }
+    }
+</script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+    #slide_images{
+        text-align: center;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+    #slide_images img{
+        width: 100%;
+        height: 500px;
+    }
+    #img_loader{
+        display:inline-grid;
+        grid-template-columns: 33% 33% 33%;
+        margin-left: 80px;
+        margin-right: 10px;
+        margin-top: 10px;
+        gap: 40px;
+       
+    }
+    #img_loader div{
+        display: grid;
+        justify-items: center;
+        margin-bottom: 10px;
+        margin: auto;
+       
+    }
+    #navbar {
+        display: flex;
+        justify-content:space-evenly ;
+    }
+    #navbar h1{
+        font-size: 30px;
+    }
+    h1 a{
+        text-decoration: none;
+    }
+    #buttons{
+        text-align: center;
+       
+    }
+    #buttons button{
+        font-size: 25px;
+       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       color: blue;
+       
+    }
+    p{
+        font-size: 25px;
+    }
+    
+</style>
+</head>
+<body>
+    <div id="navbar">
+    <h1>Hotsar</h1>
+    <h1><a href="search.html">Search Movies</a></h1>
+    </div>
+    
+    <div id="slide_images"></div>
+    <div id="buttons">
+        <button onclick="SortLH()">Rating:L to H</button>
+        <button onclick="SortHL()">Rating:H to L</button>
+    </div>
+    <div id="img_loader">
+        <img id="loader" src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=ecf05e47r2tfvszp3vgec388i2ak8dj1rajim4otc9wj4hg0&rid=giphy.gif&ct=g" alt="">
+ 
+    </div>
+    
+</body>
+</html>
+<script src="index.js"></script>

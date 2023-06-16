@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body>div{
+        display: flex;
+       }
+       body>div>p{
+        padding: 10px;
+        color: rgb(255, 136, 0);
+        margin-left: 20px;
+        font-size: 20px;
+       }
+       button{
+        padding: 10px;
+        margin-left: 30px;
+       }
+    </style>
+</head>
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Shri_Virat_Kohli_for_Cricket%2C_in_a_glittering_ceremony%2C_at_Rashtrapati_Bhavan%2C_in_New_Delhi_on_September_25%2C_2018_%28cropped%29.JPG/220px-Shri_Virat_Kohli_for_Cricket%2C_in_a_glittering_ceremony%2C_at_Rashtrapati_Bhavan%2C_in_New_Delhi_on_September_25%2C_2018_%28cropped%29.JPG" alt="">
+    <div>
+        <p> Likes:<span id="like"></span> </p>
+        <p> Dislikes:<span id="dislike"></span> </p>  
+    </div>
+    <button onclick="likefun()" >Like</button>
+    <button onclick="dislikefun()" >Dislike</button>
+</body>
+</html>
+<script>
+    let like_count=localStorage.getItem("like_img") || 0;
+    document.querySelector("#like").innerText=like_count;
+
+    let dislike_count=localStorage.getItem("dislike_img") || 0;
+    document.querySelector("#dislike").innerText=dislike_count;
+
+    function likefun(){
+        like_count++;
+        document.querySelector("#like").innerText=like_count;
+        localStorage.setItem("like_img",like_count);
+        
+    }
+
+    function dislikefun(){
+        dislike_count++;
+        document.querySelector("#dislike").innerText=dislike_count;
+        localStorage.setItem("dislike_img",dislike_count);
+    }
+
+</script>

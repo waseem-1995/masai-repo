@@ -1,0 +1,24 @@
+/* Write all the code related to the table here  */
+table{
+    margin: auto;
+    width: 40%;
+    margin-top: 50px;
+}
+tr{
+    height: 30px;
+    width: 40%;
+    border: 1px solid black;
+    text-align: center;
+    
+}
+table>thead{
+    height: 30px;
+    background-color: aqua;
+   
+   
+}
+h1{
+    text-align: center;
+}
+
+  

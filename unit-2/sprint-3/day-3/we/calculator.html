@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #calculator{
+            width: 40%;
+            height: 500px;
+            margin: auto;
+            border: 1px solid green;
+        }
+        #display{
+            width: 80%;
+            height: 40px;
+            border: 1px solid red;
+            margin: auto;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        #keyboard{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(4,70px);
+            gap: 20px;
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+        }
+        #keyboard>div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            border: 1px solid red;
+            border-radius: 50%;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+
+        }
+        .char{
+            background-color: black;
+            color: white;
+        }
+        #cancel{
+            background-color: rgb(233, 41, 41);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <div id="display"></div>
+        <div id="keyboard">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div class="char">+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div class="char">-</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div class="char">*</div>
+            <div>0</div>
+            <div id="cancel">C</div>
+            <div class="char">=</div>
+            <div class="char">/</div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    let keys=document.querySelectorAll("#keyboard>div");
+    let bag=" "
+    keys.forEach(function(elem){
+        elem.addEventListener("click",mycal)
+    })
+    function mycal(event){
+        let targetNumber=event.target.innerText;
+        if (targetNumber=="C"){
+            document.getElementById("display").innerText=""
+            bag=""
+        }else if(targetNumber=="="){
+            document.getElementById("display").innerText=eval(bag)
+        }
+        else{
+            bag=bag+targetNumber;
+             document.getElementById("display").innerText=bag;
+        }
+        
+    }
+</script>

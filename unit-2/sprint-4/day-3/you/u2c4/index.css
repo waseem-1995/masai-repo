@@ -1,0 +1,41 @@
+body>div{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(227, 233, 233);
+    box-shadow: 2px 2px 5px 5px rgb(235, 235, 235);
+}
+body>div>a{
+    text-decoration: none;
+}
+body>h1{
+ text-align: center;
+}
+
+input,
+select {
+  display: block;
+  font-size: 20px;
+  padding: 2%;
+  margin: auto;
+ margin-top: 15px;
+}
+
+option {
+    font-size: 25px;
+}
+
+form{
+    width: 400px;
+    border: 1px solid rgb(230, 230, 230);
+    margin: 3% auto;
+    padding: 3%;
+    background: white;
+    background-color: rgb(227, 233, 233);
+    box-shadow: 2px 2px 5px 5px rgb(235, 235, 235);
+    border-radius: 10px;
+    
+}
+#course ,#gender{
+    width: 265px;
+}
+
